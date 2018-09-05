@@ -1,19 +1,13 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any
+  agent any
 
-    stages {
-        stage('a') {
-            agent {
-                docker {
-                    image 'node'
-                }
-            }
-            steps {
-                sh('echo "Hallo" > testfile1')
-                sh('node --version')
-            }
-        }
+  stages {
+    stage('prepare') {
+      steps {
+        sh('echo Hi')
+      }
     }
+  }
 }
